@@ -1,18 +1,17 @@
 package Dummy::Repo;
 use strict;
+use warnings;
+use v5.10.0;
 
 BEGIN {
     use Exporter ();
-    use vars qw($VERSION @ISA @EXPORT @EXPORT_OK %EXPORT_TAGS);
+    use vars qw($VERSION @EXPORT @ISA);
     $VERSION     = '0.01';
     @ISA         = qw(Exporter);
-    #Give a hoot don't pollute, do not export more than needed by default
-    @EXPORT      = qw();
-    @EXPORT_OK   = qw();
-    %EXPORT_TAGS = ();
+    @EXPORT      = qw( word );
 }
 
+sub word { return shift };
 
 1;
-# The preceding line will help the module return a true value
 
