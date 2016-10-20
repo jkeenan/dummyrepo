@@ -8,4 +8,3 @@ BEGIN { use_ok( 'Dummy::Repo' ); }
 
 my $word = 'epsilon';
 is(word($word), $word, "Got word: $word");
-
