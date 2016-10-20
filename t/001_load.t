@@ -9,4 +9,3 @@ BEGIN { use_ok( 'Dummy::Repo' ); }
 my $word = 'beta';
 is(word($word), $word, "Got word: $word");
 
-
