@@ -2,9 +2,11 @@
 A git repo solely for testing other git repos
 
 NAME
+
     Dummy::Repo - A repo solely for testing other git repos
 
 SYNOPSIS
+
         use Dummy::Repo;
         use Test::More qw(no_plan);
 
@@ -14,6 +16,7 @@ SYNOPSIS
         is($rv, $word, "Got expected word: $word");
 
 DESCRIPTION
+
     This library exists solely for the purpose of providing a git repository
     to be used in the testing of other git repositories or git
     functionality.
@@ -39,6 +42,7 @@ DESCRIPTION
     certain commits but not other commits.
 
 AUTHOR
+
     James E Keenan (jkeenan at cpan dot org). Copyright 2016.
 
 INSTALL
