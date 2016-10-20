@@ -6,6 +6,6 @@ use Test::More tests => 2;
 
 BEGIN { use_ok( 'Dummy::Repo' ); }
 
-my $word = 'epsilon';
+my $word = 'zeta';
 is(word($word), $word, "Got word: $word");
 
