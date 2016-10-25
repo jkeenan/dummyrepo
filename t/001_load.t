@@ -6,5 +6,5 @@ use Test::More tests => 2;
 
 BEGIN { use_ok( 'Dummy::Repo' ); }
 
-my $word = 'kappa';
+my $word = 'lambda';
 is(word($word), $word, "Got word: $word");
