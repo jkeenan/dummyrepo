@@ -8,4 +8,3 @@ BEGIN { use_ok( 'Dummy::Repo' ); }
 
 my $word = 'kappa';
 is(word($word), $word, "Got word: $word");
-
