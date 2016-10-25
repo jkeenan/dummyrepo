@@ -1,6 +1,6 @@
 # -*- perl -*-
 
-# t/001_load.t - check module loading and create testing directory
+# t/001_load.t - test Dummy::Repo::word()
 
 use Test::More tests => 2;
 

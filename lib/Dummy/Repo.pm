@@ -2,16 +2,24 @@ package Dummy::Repo;
 use strict;
 use warnings;
 use v5.10.0;
+use Carp;
 
 BEGIN {
     use Exporter ();
     use vars qw($VERSION @EXPORT @ISA);
     $VERSION     = '0.01';
     @ISA         = qw(Exporter);
-    @EXPORT      = qw( word );
+    @EXPORT      = qw( word p51 );
 }
 
 sub word { return shift };
+
+sub p51 {
+    my $n = shift;
+    croak "Must pass an integer to p51()"
+        unless $n =~ m/^[+-]?\d+$/;
+    return $n + 51;
+}
 
 =head1 NAME
 
@@ -27,6 +35,11 @@ Dummy::Repo - A repo solely for testing other git repos
     $rv = word($word);
     is($rv, $word, "Got expected word: $word");
 
+    my ($n);
+    $n = 7;
+    $rv = p51($n);
+    is($rv, $n + 51, "Got expected sum: $rv);
+
 =head1 DESCRIPTION
 
 This library exists solely for the purpose of providing a git repository to be
@@ -39,12 +52,35 @@ consisting of:
 
 =item *
 
-A module, F<Dummy::Repo>,  which exports a single subroutine, C<word()>, which
-does nothing but return a string provided as its argument.
+A module, F<Dummy::Repo>,  which exports two subroutines:
+
+=over 4
+
+=item * C<word()>
+
+C<word()> does nothing but return a string provided as its argument.
+
+=item * C<p51()>
+
+C<p51()> does nothing but add 51 to the positive or negative integer provided as its argument.
+
+=back
 
 =item *
 
-A test file, F<t/001_load.t>, which confirms that C<word()> works as expected.
+Two test files:
+
+=over 4
+
+=item * F<t/001_load.t>, which confirms that C<word()> works as expected.
+
+This file is present in all commits in this repository.
+
+=item * F<t/002_add.t>, which confirms that C<p51()> works as expected.
+
+This file is not present in all commits in this repository.
+
+=back
 
 =back
 
