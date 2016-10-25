@@ -27,5 +27,3 @@ cmp_ok($sum, '==', $n + 51, "Got expected sum:  $sum");
 $n = -101;
 $sum = p51($n);
 cmp_ok($sum, '==', $n + 51, "Got expected sum:  $sum");
-
-
