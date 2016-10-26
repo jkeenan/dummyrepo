@@ -1,70 +1,72 @@
-NAME
-    Dummy::Repo - A repo solely for testing other git repos
+# NAME
 
-INSTALL
+Dummy::Repo - A repo solely for testing other git repos
 
-    perl Makefile.PL
-    make
-    make test
-    make install
+# INSTALL
 
-If you are on a windows box you should use 'nmake' rather than 'make'.
+```
+perl Makefile.PL
+make
+make test
+make install
+```
 
-SYNOPSIS
-        use Dummy::Repo;
-        use Test::More qw(no_plan);
+If you are on a windows box you should use `nmake` rather than `make`.
 
-        my ($word, $rv);
-        $word = 'alpha';
-        $rv = word($word);
-        is($rv, $word, "Got expected word: $word");
+# SYNOPSIS
 
-        my ($n);
-        $n = 7;
-        $rv = p51($n);
-        is($rv, $n + 51, "Got expected sum: $rv);
+```perl
+use Dummy::Repo;
+use Test::More qw(no_plan);
 
-DESCRIPTION
-    This library exists solely for the purpose of providing a git repository
-    to be used in the testing of other git repositories or git
-    functionality.
+my ($word, $rv);
+$word = 'alpha';
+$rv = word($word);
+is($rv, $word, "Got expected word: $word");
 
-    This library is set up in the form of a CPAN-ready Perl distribution
-    consisting of:
+my ($n);
+$n = 7;
+$rv = p51($n);
+is($rv, $n + 51, "Got expected sum: $rv);
+```
 
-    *   A module, Dummy::Repo, which exports two subroutines:
+# DESCRIPTION
 
-        *   "word()"
+This library exists solely for the purpose of providing a git repository to be
+used in the testing of other git repositories or git functionality.
 
-            "word()" does nothing but return a string provided as its
-            argument.
+This library is set up in the form of a CPAN-ready Perl distribution
+consisting of:
 
-        *   "p51()"
+- A module, `Dummy::Repo`,  which exports two subroutines:
+    - `word()`
 
-            "p51()" does nothing but add 51 to the positive or negative
-            integer provided as its argument.
+        `word()` does nothing but return a string provided as its argument.
 
-    *   Two test files:
+    - `p51()`
 
-        *   t/001_load.t, which confirms that "word()" works as expected.
+        `p51()` does nothing but add 51 to the positive or negative integer provided as its argument.
+- Two test files:
+    - `t/001_load.t`, which confirms that `word()` works as expected.
 
-            This file is present in all commits in this repository.
+        This file is present in all commits in this repository.
 
-        *   t/002_add.t, which confirms that "p51()" works as expected.
+    - `t/002_add.t`, which confirms that `p51()` works as expected.
 
-            This file is not present in all commits in this repository.
+        This file is not present in all commits in this repository.
 
-    What is more important is the fact that t/001_load.t has been modified
-    in a series of commits, sometimes to change the word used in testing
-    "word()" and sometimes only to add or subtract whitespace within the
-    test file. We end up with a series of commits which can each be tested
-    with:
+What is more important is the fact that `t/001_load.t` has been modified in a
+series of commits, sometimes to change the word used in testing `word()` and
+sometimes only to add or subtract whitespace within the test file.  We end up
+with a series of commits which can each be tested with:
 
-        prove -vb t/001_load.t
+```
+prove -vb t/001_load.t
+```
 
-    The objective is to generate differences in the output of prove at
-    certain commits but not other commits.
+The objective is to generate **differences** in the output of `prove` at
+certain commits but not other commits.
 
-AUTHOR
-    James E Keenan (jkeenan at cpan dot org). Copyright 2016.
+# AUTHOR
 
+James E Keenan (jkeenan at cpan dot org).  Copyright 2016.
