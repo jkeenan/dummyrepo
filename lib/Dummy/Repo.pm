@@ -21,6 +21,28 @@ sub p51 {
     return $n + 51;
 }
 
+=pod
+
+# Broken
+#
+    my $fid_fileinfo = $profile->{fid_fileinfo};
+    my $sub_subinfo  = $profile->{sub_subinfo};
+
+    # add profile ref so fidinfo & subinfo objects
+    # XXX circular ref, add weaken
+    $_ and $_->[7] = $profile for @$fid_fileinfo; # <-- PROBLEM
+
+# Fixed
+
+    my $fid_fileinfo = $profile->{fid_fileinfo};
+    my $sub_subinfo  = $profile->{sub_subinfo};
+
+    # add profile ref so fidinfo & subinfo objects
+    # XXX circular ref, add weaken
+    for (@$fid_fileinfo) { $_ and $_->[7] = $profile; }
+
+=cut
+
 =head1 NAME
 
 Dummy::Repo - A repo solely for testing other git repos
