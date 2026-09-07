@@ -6,7 +6,7 @@ use ExtUtils::MakeMaker;
 WriteMakefile(
     NAME         => 'Dummy::Repo',
     VERSION_FROM => 'lib/Dummy/Repo.pm', # finds \$VERSION
-    AUTHOR       => 'James E Keenan (jkeenan@cpan.org)',
+    AUTHOR       => 'James E Keenan (jamesekeenan@yahoo.com)',
     ABSTRACT     => 'A repo solely for testing other git repos',
     PREREQ_PM    => {
                      'Test::Simple' => 0.44,
