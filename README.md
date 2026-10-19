@@ -69,4 +69,4 @@ certain commits but not other commits.
 
 # AUTHOR
 
-James E Keenan (jkeenan at cpan dot org).  Copyright 2016.
+James E Keenan (jkeenan at pobox com).  Copyright 2016-2026.
